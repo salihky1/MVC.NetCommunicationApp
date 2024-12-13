@@ -6,16 +6,16 @@
 <table class="table table-striped">
     <tr>
         <th>
-            First Name
+            Ad
         </th>
         <th>
-            Last Name
+            Soyad
         </th>
         <th>
             @Html.DisplayNameFor(model => model[0].Email)
         </th>
         <th>
-            Phone Number
+            Telefon numarası
         </th>
         <th>Regulations</th>
     </tr>
@@ -36,9 +36,9 @@
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-                <a class="link-offset-2 " asp-controller="Contact" asp-action="Edit" asp-route-id="@item.ContactId" asp-route-slug="@item.Slug">Edit</a> |
-                <a class="link-offset-2 " asp-controller="Contact" asp-action="Details" asp-route-id="@item.ContactId" asp-route-slug="@item.Slug">Details</a> |
-                <a class="link-offset-2 " asp-controller="Contact" asp-action="Delete" asp-route-id="@item.ContactId">Delete</a>
+                <a class="link-offset-2 " asp-controller="Contact" asp-action="Edit" asp-route-id="@item.ContactId" asp-route-slug="@item.Slug">Güncelle</a> |
+                <a class="link-offset-2 " asp-controller="Contact" asp-action="Details" asp-route-id="@item.ContactId" asp-route-slug="@item.Slug">Detaylar</a> |
+                <a class="link-offset-2 " asp-controller="Contact" asp-action="Delete" asp-route-id="@item.ContactId">Sil</a>
             </td>
         </tr>
     }
