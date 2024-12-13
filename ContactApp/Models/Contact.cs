@@ -1,29 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace ContactApp.Models
 {
-	public class Contact
-	{
+    public class Contact
+    {
         public int ContactId { get; set; }
 
-        [Required(ErrorMessage = "Please enter a first name")]
+        [Required(ErrorMessage = "Lütfen bir ad giriniz.")]
         public string FirstName { get; set; } = null!;
 
-        [Required(ErrorMessage = "Please enter a last name")]
+        [Required(ErrorMessage = "Lütfen bir soyad giriniz.")]
         public string LastName { get; set; } = null!;
 
-        [Required(ErrorMessage = "Please enter a phone number")]
+        [Required(ErrorMessage = "Lütfen bir telefon numarası giriniz.")]
         public string PhoneNumber { get; set; } = null!;
 
-        [Required(ErrorMessage = "Please enter an email")]
+        [Required(ErrorMessage = "Lütfen bir e-posta adresi giriniz.")]
         public string Email { get; set; } = null!;
 
-        //FK for the Category table
-        [Required(ErrorMessage = "Please select a category")]
+        [Required(ErrorMessage = "Lütfen bir kategori seçiniz.")]
         public int? CategoryId { get; set; }
 
-        //Navigation property
         [ValidateNever]
         public Category Category { get; set; } = null!;
 
@@ -31,7 +29,5 @@ namespace ContactApp.Models
 
         //Read only property that returns the full name of the contact
         public string Slug => FirstName?.Replace(' ', '-').ToLower() + '-' + LastName?.Replace(' ', '-').ToLower();
-
     }
 }
-
